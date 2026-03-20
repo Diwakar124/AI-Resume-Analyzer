@@ -169,6 +169,13 @@ if uploaded_file:
             mime="application/pdf"
         )
 
+import os
+import joblib
+
+BASE_DIR = os.path.dirname(__file__)
+model_path = os.path.join(BASE_DIR, 'clf_compressed.pkl')
+
+svc_model = joblib.load(model_path)
 # -------------------- FOOTER --------------------
 st.markdown("---")
 st.markdown("<center>Made by Diwakar 🚀</center>", unsafe_allow_html=True)
